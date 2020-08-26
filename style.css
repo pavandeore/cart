@@ -1,5 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
 :root{
   font-family: arial;
+  margin: 0;
+  padding: 0;
+}
+nav > h1{
+  font-family: 'Alata', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  background: rgba(52, 161, 109, 0.55);
+  padding: 13px;
+  margin: 0;
+  color: #fff;
+}
+nav > h1 > sub{
+  font-size: 20px;
+}
+#smart{
+  margin-top: 5px;
+  background: rgb(235, 104, 104,0.6);
+  border: 4px solid rgb(235, 104, 104,0.9);
+  text-align: center;
+  color: palegoldenrod;
+  font-weight: 800;
+}
+#main{
+  width: 98%;
 }
 a{
 text-decoration: none;
@@ -9,47 +36,75 @@ color: black;
   text-align: center;
   margin: 20px;
   padding: 10px;
-  background: rgba(32,65,221,0.3);
+  background: rgba(32,65,221,0.1);
+  border: 3px solid rgba(32,65,221,0.2);
 }
 #cart > #logo{
   height: 50px;
   width: 50px;
-  background: cyan;
-  float: right;
-  border: 5px solid red;
-  border-radius: 10px;
-  text-align: center;
-  line-height: 3;
+  right: 0;
+  position: absolute;
   cursor: pointer;
+  margin-left: 25px;
+  font-weight: 800;
 }
-#card{
+#cart-img{
+  height: 50px;
+  width: 50px;
+  float: right;
+  cursor: pointer;
+  margin-right: -2px;
+}
+#card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#card > li{
   background: rgba(23,243,21,0.3);
   padding: 10px;
-    width: 250px;
+  width: 230px;
+  list-style: none;
+  margin: 10px auto;
 }
-#card > h2{
+#card > li > h2{
   letter-spacing: 3px;
 }
-#card > p{
+#card > li > p{
   letter-spacing: 3px;
 }
-#card > div{
+#card > li > div{
   display: flex;
   align-items: center;
-  justify-content: space-around;
-
+  justify-content: space-between;
 }
 #btn1, #btn2{
-  height: 20px;
-  align-self: center;
+  align-self: flex-end;
+  padding-top: 8px;
   border-radius : 1px;
   outline: none;
   font-weight: 700;
   cursor: pointer;
+  justify-self: center;
+  align-self: flex-start;
+}
+#btn1> img{
+  height: 25px;
+  width: 25px;
+}
+#btn2> img{
+  height: 25px;
+  width: 25px;
+}
+#checkDiv{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
 }
 #checkDiv > li{
-width: 300px;
 display: flex;
+width: 220px;
 justify-content: space-between;
 align-items: center;
 background: #252525;

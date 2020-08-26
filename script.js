@@ -1,15 +1,46 @@
-let note = document.querySelector("#note");
+import { data }  from "./data.js";
 
+let smart = document.querySelector("#smart");
 let cart = document.querySelector("#logo");
+// let plus = document.querySelector("#btn1");
+// let minus = document.querySelector("#btn2");
+// let quanDiv = document.querySelector("#quan");
+let checkDivMain = document.querySelector("#checkDivMain");
+let card = document.querySelector("#card");
+let checkDiv = document.createElement('li');
+let item_title = document.querySelector("#item-title");
+let item_desc = document.querySelector("#item-description");
+let item_price = document.querySelector("#priceDiv");
+let price = 1;
+let quan = 0;
+
+
+
+
+data.forEach((e)=>{
+
+  let li = document.createElement('li');
+
+      li.innerHTML = `
+      <h2 id="item-title">${e.title}</h2>
+      <p id="item-description">${e.description}</p>
+      <div>
+        <p>Price :- </p>
+        <div id="priceDiv">$ ${e.price}</div>
+        <span id="quan">0</span>
+        <div id="btn1"><img src="assets/plus.png"/></div>
+        <div id="btn2"><img src="assets/minus.png"/></div>
+      </div>
+      `;
+      card.appendChild(li);
+})
+
 let plus = document.querySelector("#btn1");
 let minus = document.querySelector("#btn2");
 let quanDiv = document.querySelector("#quan");
-let checkDivMain = document.querySelector("#checkDivMain");
-let checkDiv = document.createElement('li');
-let price = 5;
-let quan = 0;
 
-function cartHandle(){
+function cartHandle(e){
+ 
   quanDiv.innerHTML = quan;
   cart.innerHTML = `${quan*price}`;
   checkDiv.setAttribute('class','list-style');
@@ -23,22 +54,18 @@ function cartHandle(){
   })
 }
 
-function plusHandle(){
+function plusHandle(e){
   quan++;
-  cartHandle()
+  cartHandle(e);
+  
 }
 
-function minusHandle(){
+function minusHandle(e){
   if(quan<=0) return alert('Not alllowed');
   quan--;
-  cartHandle()
+  cartHandle(e);
+  
 }
 
 plus.addEventListener("click",plusHandle);
 minus.addEventListener("click",minusHandle);
-
-setTimeout(()=>{
-document.body.removeChild(note);
-},10000)
-
-
